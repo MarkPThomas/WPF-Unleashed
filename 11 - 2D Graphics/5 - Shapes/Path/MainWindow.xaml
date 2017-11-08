@@ -7,6 +7,32 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <StackPanel Orientation="Horizontal">
+            <StackPanel Margin="15">
+                <Path Fill="Orange" Stroke="Black" StrokeThickness="10">
+                    <Path.Data>
+                        <PathGeometry>
+                            <!-- Triangle #1 -->
+                            <PathFigure IsClosed="True">
+                                <LineSegment Point="0,100" />
+                                <LineSegment Point="100,100" />
+                            </PathFigure>
+
+                            <!-- Triangle #2 -->
+                            <PathFigure IsClosed="True" StartPoint="70,0">
+                                <LineSegment Point="0,100" />
+                                <LineSegment Point="100,100" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+            </StackPanel>
+            <StackPanel Margin="15">
+                <Path Fill="Orange" Stroke="Black" StrokeThickness="10"
+                      Data="M 0,0 L 0,100 L 100,100 Z
+                            M 70,0 L0,100 L100,100 Z">
+                </Path>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

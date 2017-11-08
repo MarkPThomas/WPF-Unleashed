@@ -5,8 +5,169 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="350" Width="1000">
+    <Window.Resources>
+            <ResourceDictionary>
+                <PathGeometry x:Key="ghostBody"
+                    Figures="M 240,250
+                    C 200,375 200,250 175,200
+                    C 100,400 100,250 100,200
+                    C 0,350   0,250   30,130
+                    C 75,0    100,0   150,0
+                    C 200,0   250,0   250,150 Z">
+                </PathGeometry>
+                <DrawingGroup x:Key="ghostFace">
+
+                    <!-- The Eyes -->
+                    <GeometryDrawing Brush="Black">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="White" Thickness="10" />
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup>
+                                <!-- Left Eye -->
+                                <EllipseGeometry RadiusX="15" RadiusY="15" Center="95,95" />
+                                <!-- Right Eye -->
+                                <EllipseGeometry RadiusX="15" RadiusY="15" Center="170,105" />
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <!-- The Mouth -->
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Black" StartLineCap="Round" EndLineCap="Round" Thickness="10" />
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <LineGeometry StartPoint="75, 160" EndPoint="175, 150" />
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </ResourceDictionary>
+        </Window.Resources>
+        <Grid>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <!-- StartPoint & EndPoint to control direction of gradient -->
+                    <!-- Note that units are relative to bounding box by default. For absolute units set MappingMode to Absolute-->
+                    <StackPanel>
+                        <Image>
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup>
+                                            <GeometryDrawing>
+                                                <GeometryDrawing.Geometry>
+                                                    <StaticResource ResourceKey="ghostBody" />
+                                                </GeometryDrawing.Geometry>
+                                                <GeometryDrawing.Brush>
+                                                    <RadialGradientBrush MappingMode="RelativeToBoundingBox">
+                                                        <GradientStop Offset="0" Color="Blue" />
+                                                        <GradientStop Offset="1" Color="Red" />
+                                                    </RadialGradientBrush>
+                                                </GeometryDrawing.Brush>
+                                            </GeometryDrawing>
+                                            <DrawingGroup>
+                                                <StaticResource ResourceKey="ghostFace" />
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                    
+                    <!-- Setting SpreadMethod to Repeat clearly reveals the bounds of the ellipse -->
+                    <StackPanel>
+                        <Image>
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup>
+                                            <GeometryDrawing>
+                                                <GeometryDrawing.Geometry>
+                                                    <StaticResource ResourceKey="ghostBody" />
+                                                </GeometryDrawing.Geometry>
+                                                <GeometryDrawing.Brush>
+                                                    <RadialGradientBrush SpreadMethod="Repeat">
+                                                        <GradientStop Offset="0" Color="Blue"/>
+                                                        <GradientStop Offset="1" Color="Red" />
+                                                    </RadialGradientBrush>
+                                                </GeometryDrawing.Brush>
+                                            </GeometryDrawing>
+                                            <DrawingGroup>
+                                                <StaticResource ResourceKey="ghostFace" />
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                    
+                    <!-- Shifting the gradient's origin within the ellipse with the GradientOrigin property. By default it is at relative offset 0.5, 0.5 to be at the center -->
+                    <StackPanel>
+                        <Image>
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup>
+                                            <GeometryDrawing>
+                                                <GeometryDrawing.Geometry>
+                                                    <StaticResource ResourceKey="ghostBody" />
+                                                </GeometryDrawing.Geometry>
+                                                <GeometryDrawing.Brush>
+                                                    <RadialGradientBrush GradientOrigin="0,0" SpreadMethod="Repeat">
+                                                        <GradientStop Offset="0" Color="Blue" />
+                                                        <GradientStop Offset="1" Color="Red" />
+                                                    </RadialGradientBrush>
+                                                </GeometryDrawing.Brush>
+                                            </GeometryDrawing>
+                                            <DrawingGroup>
+                                                <StaticResource ResourceKey="ghostFace" />
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                    
+                    <!-- Change alpha channel to introduce transparency-->
+                    <StackPanel Background="Black">
+                        <Image>
+                            <Image.Source>
+                                <DrawingImage>
+                                    <DrawingImage.Drawing>
+                                        <DrawingGroup>
+                                            <GeometryDrawing>
+                                                <GeometryDrawing.Geometry>
+                                                    <StaticResource ResourceKey="ghostBody" />
+                                                </GeometryDrawing.Geometry>
+                                                <GeometryDrawing.Brush>
+                                                    <RadialGradientBrush RadiusX="0.7" RadiusY="0.7">
+                                                        <!-- Note: This uses a 'transparent blue' color rather than simply specifying Transparent as the color. -->
+                                                        <GradientStop Offset="0" Color="#990000FF" />
+                                                        <GradientStop Offset="1" Color="#000000FF" />
+                                                        <!-- That's because Transparent is defined as white with a 0 alpha channel (#00FFFFFF), which causes the interpolation of the colors to be different.
+                                                             Transparent would affect transparency on R, G & B, which would give the brush more of a gray look. 
+                                                             In this case, it would make the entire figure invisible, so no gradation would be seen. -->
+                                                        <!--
+                                                        <GradientStop Offset="0" Color="Transparent" />
+                                                        <GradientStop Offset="1" Color="Transparent" />
+                                                        -->
+                                                    </RadialGradientBrush>
+                                                </GeometryDrawing.Brush>
+                                            </GeometryDrawing>
+                                            <DrawingGroup>
+                                                <StaticResource ResourceKey="ghostFace" />
+                                            </DrawingGroup>
+                                        </DrawingGroup>
+                                    </DrawingImage.Drawing>
+                                </DrawingImage>
+                            </Image.Source>
+                        </Image>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
 </Window>

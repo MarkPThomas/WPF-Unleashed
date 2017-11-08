@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="525">
     <Grid>
-        
+        <StackPanel>
+            <!-- Note that the coordinates are relative to the space given to the Line element by the layout system -->
+            <Line X1="0" Y1="0" X2="100" Y2="100" Stroke="Black" StrokeThickness="10" Margin="4" />
+            <Line X1="0" Y1="0" X2="100" Y2="0" Stroke="Black" StrokeThickness="10" Margin="4" />
+            <Line X1="0" Y1="100" X2="100" Y2="0" Stroke="Black" StrokeThickness="10" Margin="4" />
+        </StackPanel>
     </Grid>
 </Window>

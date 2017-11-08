@@ -1,0 +1,192 @@
+﻿<Window x:Class="WPFUnleashed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUnleashed"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <ResourceDictionary>
+            <PathFigure IsClosed="True" x:Key="figure">
+                <LineSegment Point=" 0, 100" />
+                <LineSegment Point=" 100, 100" />
+            </PathFigure>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <StackPanel Orientation="Horizontal"
+                    Margin="10">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10" />
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <!-- Triangle #1 -->
+                                                <PathGeometry>
+                                                    <PathFigure IsClosed="True">
+                                                        <LineSegment Point=" 0, 100" />
+                                                        <LineSegment Point=" 100, 100" />
+                                                    </PathFigure>
+                                                </PathGeometry>
+                                                <!-- Triangle #2 -->
+                                                <PathGeometry>
+                                                    <!-- StartPoint is starting the first point at x=70,y=0, rather than the default 0,0-->
+                                                    <PathFigure StartPoint="70, 0" IsClosed="True">
+                                                        <LineSegment Point=" 0, 100" />
+                                                        <LineSegment Point=" 100, 100" />
+                                                    </PathFigure>
+                                                </PathGeometry>
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10" />
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <!-- One reason to use a group rather than defining individual geometries is that 
+                                                 you can set various geometry properties independently on each child -->
+                                            <GeometryGroup>
+                                                <!-- Triangle #1 -->
+                                                <PathGeometry>
+                                                    <PathFigure IsClosed="True">
+                                                        <LineSegment Point=" 0, 100" />
+                                                        <LineSegment Point=" 100, 100" />
+                                                    </PathFigure>
+                                                </PathGeometry>
+                                                <!-- Triangle #2 -->
+                                                <PathGeometry>
+                                                    <PathGeometry.Transform>
+                                                        <RotateTransform Angle="25" />
+                                                    </PathGeometry.Transform>
+                                                    <!-- StartPoint is starting the first point at x=70,y=0, rather than the default 0,0-->
+                                                    <PathFigure IsClosed="True">
+                                                        <LineSegment Point=" 0, 100" />
+                                                        <LineSegment Point=" 100, 100" />
+                                                    </PathFigure>
+                                                </PathGeometry>
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <!-- To improve performance for complex geometries, you can define a shape once as a resource and apply 
+                         transformations within the geometry group -->
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10" />
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <GeometryGroup>
+                                                <!-- Triangle #1 -->
+                                                <PathGeometry>
+                                                    <StaticResource ResourceKey="figure" />
+                                                </PathGeometry>
+
+                                                <!-- Triangle #2 -->
+                                                <PathGeometry>
+                                                    <PathGeometry.Transform>
+                                                        <RotateTransform Angle="25" />
+                                                    </PathGeometry.Transform>
+                                                    <StaticResource ResourceKey="figure" />
+                                                </PathGeometry>
+                                            </GeometryGroup>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <!-- Because Brush and Pen are specified at the Drawing level rather than at the Geometry level,
+                                         GeometryGroup doesn't enable you to combine shapes with different fills or outlines.
+                                         To achieve this, you can use a DrawingGroup to combine multiple drawings (which might or might not
+                                         have multiple geometries-->
+                                    <DrawingGroup>
+                                        <GeometryDrawing Brush="Yellow">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Brush="Red" Thickness="10" />
+                                            </GeometryDrawing.Pen>
+                                            <GeometryDrawing.Geometry>
+                                                <!-- Triangle #1 -->
+                                                    <PathGeometry>
+                                                        <PathFigure IsClosed="True">
+                                                            <LineSegment Point=" 0, 100" />
+                                                            <LineSegment Point=" 100, 100" />
+                                                        </PathFigure>
+                                                    </PathGeometry>
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                        <GeometryDrawing Brush="Orange">
+                                            <GeometryDrawing.Pen>
+                                                <Pen Brush="Black" Thickness="10" />
+                                            </GeometryDrawing.Pen>
+                                            <GeometryDrawing.Geometry>
+                                                <!-- Triangle #2 -->
+                                                    <PathGeometry>
+                                                        <PathGeometry.Transform>
+                                                            <RotateTransform Angle="25" />
+                                                        </PathGeometry.Transform>
+                                                        <!-- StartPoint is starting the first point at x=70,y=0, rather than the default 0,0-->
+                                                        <PathFigure IsClosed="True">
+                                                            <LineSegment Point=" 0, 100" />
+                                                            <LineSegment Point=" 100, 100" />
+                                                        </PathFigure>
+                                                    </PathGeometry>
+                                            </GeometryDrawing.Geometry>
+                                        </GeometryDrawing>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

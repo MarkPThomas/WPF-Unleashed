@@ -1,0 +1,29 @@
+﻿<Window x:Class="WPFUnleashed.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFUnleashed"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="575" Width="525">
+    <Grid>
+        <!-- Overuse of shapes can lead to performance problems! -->
+        <!-- See code behind example in this project as well -->
+        <StackPanel>
+            <Rectangle Width="200" Height="100"
+                       Fill="Orange" Stroke="Black" StrokeThickness="10" Margin="4" />
+            <Rectangle Width="200" Height="100"
+                    RadiusX="10" RadiusY="30"
+                    Fill="Orange" Stroke="Black" StrokeThickness="10" Margin="4" />
+            <Rectangle Width="200" Height="100"
+                    RadiusX="30" RadiusY="10"
+                    Fill="Orange" Stroke="Black" StrokeThickness="10" Margin="4" />
+            <!-- Maximum Radii of 1/2 edge dimension -->
+            <Rectangle Width="200" Height="100"
+                    RadiusX="100" RadiusY="50"
+                    Fill="Orange" Stroke="Black" StrokeThickness="10" Margin="4" />
+            <Ellipse Width="200" Height="100"
+                    Fill="Orange" Stroke="Black" StrokeThickness="10" Margin="4" />
+        </StackPanel>
+    </Grid>
+</Window>

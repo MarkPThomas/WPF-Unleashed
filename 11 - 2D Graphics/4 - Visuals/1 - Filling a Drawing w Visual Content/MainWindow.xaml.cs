@@ -24,5 +24,27 @@ namespace WPFUnleashed
         {
             InitializeComponent();
         }
+
+        public void DrawVisuals()
+        {
+            DrawingGroup ghostDrawing = FindResource("ghostDrawing") as DrawingGroup;
+            DrawingVisual ghostVisual = new DrawingVisual();
+            using (DrawingContext dc = ghostVisual.RenderOpen())
+            {
+                dc.DrawDrawing(ghostDrawing);
+            }
+
+            GeometryDrawing bodyDrawing = FindResource("bodyDrawing") as GeometryDrawing;
+            GeometryDrawing eyesDrawing = FindResource("eyesDrawing") as GeometryDrawing;
+            GeometryDrawing mouthDrawing = FindResource("mouthDrawing") as GeometryDrawing;
+            DrawingVisual ghostVisualParts = new DrawingVisual();
+            using (DrawingContext dc = ghostVisualParts.RenderOpen())
+            {
+                dc.DrawDrawing(bodyDrawing);
+                dc.DrawDrawing(eyesDrawing);
+                dc.DrawDrawing(mouthDrawing);
+            }
+
+        }
     }
 }

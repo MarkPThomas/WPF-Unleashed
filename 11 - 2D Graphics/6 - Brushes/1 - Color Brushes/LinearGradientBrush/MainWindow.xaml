@@ -5,8 +5,465 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="1000" Width="1250">
+    <Window.Resources>
+        <ResourceDictionary>
+            <PathGeometry x:Key="ghostBody"
+                    Figures="M 240,250
+                    C 200,375 200,250 175,200
+                    C 100,400 100,250 100,200
+                    C 0,350   0,250   30,130
+                    C 75,0    100,0   150,0
+                    C 200,0   250,0   250,150 Z">
+            </PathGeometry>
+            <DrawingGroup x:Key="ghostFace">
+                
+                <!-- The Eyes -->
+                <GeometryDrawing Brush="Black">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="White" Thickness="10" />
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <GeometryGroup>
+                            <!-- Left Eye -->
+                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="95,95" />
+                            <!-- Right Eye -->
+                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="170,105" />
+                        </GeometryGroup>
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+                <!-- The Mouth -->
+                <GeometryDrawing>
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="Black" StartLineCap="Round" EndLineCap="Round" Thickness="10" />
+                    </GeometryDrawing.Pen>
+                    <GeometryDrawing.Geometry>
+                        <LineGeometry StartPoint="75, 160" EndPoint="175, 150" />
+                    </GeometryDrawing.Geometry>
+                </GeometryDrawing>
+            </DrawingGroup>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <!-- StartPoint & EndPoint to control direction of gradient -->
+                <!-- Note that units are relative to bounding box by default. For absolute units set MappingMode to Absolute-->
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush MappingMode="RelativeToBoundingBox">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                                    <GradientStop Offset="0" Color="Blue"/>
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="1,0">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="-2,-2" EndPoint="2,2">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!-- Using ScRgb instead of SRgb. These are floating point values for the colors rather than integer, allowing for a wider subset of color gradients -->
+                <!-- StartPoint & EndPoint to control direction of gradient -->
+                <!-- Note that units are relative to bounding box by default. For absolute units set MappingMode to Absolute-->
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush MappingMode="RelativeToBoundingBox" ColorInterpolationMode="ScRgbLinearInterpolation">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0" ColorInterpolationMode="ScRgbLinearInterpolation">
+                                                    <GradientStop Offset="0" Color="Blue"/>
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" ColorInterpolationMode="ScRgbLinearInterpolation">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="1,0" ColorInterpolationMode="ScRgbLinearInterpolation">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="-2,-2" EndPoint="2,2" ColorInterpolationMode="ScRgbLinearInterpolation">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <!-- SpreadMethod determines how any leftover area not covered by the gradient should be filled -->
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0.45, 0.45" EndPoint="0.55, 0.55" SpreadMethod="Pad">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0.45, 0.45" EndPoint="0.55, 0.55" SpreadMethod="Repeat">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush StartPoint="0.45, 0.45" EndPoint="0.55, 0.55" SpreadMethod="Reflect">
+                                                    <GradientStop Offset="0" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Red" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                
+                <!-- Linear Gradient Brush applied to the Pen -->
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing Brush="Red">
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Pen>
+                                                <Pen Thickness="20">
+                                                    <Pen.Brush>
+                                                        <LinearGradientBrush>
+                                                            <GradientStop Offset="0" Color="Red" />
+                                                            <GradientStop Offset="0.2" Color="Orange" />
+                                                            <GradientStop Offset="0.4" Color="Yellow" />
+                                                            <GradientStop Offset="0.6" Color="Green" />
+                                                            <GradientStop Offset="0.8" Color="Blue" />
+                                                            <GradientStop Offset="1" Color="Purple" />
+                                                        </LinearGradientBrush>
+                                                    </Pen.Brush>
+                                                </Pen>
+                                            </GeometryDrawing.Pen>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                
+                <!-- Crisp lines achieved by making two gradient stops at the same offset with different colors -->
+                <StackPanel>
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <DrawingGroup>
+                                        <GeometryDrawing>
+                                            <GeometryDrawing.Geometry>
+                                                <StaticResource ResourceKey="ghostBody" />
+                                            </GeometryDrawing.Geometry>
+                                            <GeometryDrawing.Brush>
+                                                <LinearGradientBrush EndPoint="0,1">
+                                                    <GradientStop Offset="0" Color="Aqua" />
+                                                    <GradientStop Offset="0.2" Color="Blue" />
+                                                    <GradientStop Offset="0.2" Color="DarkBlue" />
+                                                    <GradientStop Offset="0.6" Color="DarkBlue" />
+                                                    <GradientStop Offset="0.6" Color="Blue" />
+                                                    <GradientStop Offset="1" Color="Aqua" />
+                                                </LinearGradientBrush>
+                                            </GeometryDrawing.Brush>
+                                        </GeometryDrawing>
+                                        <DrawingGroup>
+                                            <StaticResource ResourceKey="ghostFace" />
+                                        </DrawingGroup>
+                                    </DrawingGroup>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

@@ -5,8 +5,433 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <StackPanel Orientation="Horizontal"
+                    Margin="10">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Top"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing>
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 StartLineCap="Flat"
+                                                 EndLineCap="Round"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure>
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Center"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing>
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 StartLineCap="Square"
+                                                 EndLineCap="Triangle"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure>
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 LineJoin="Miter"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 LineJoin="Round"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 LineJoin="Bevel"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.Solid}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.Dash}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.Dot}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.Solid}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.Dash}"
+                                                 DashCap="Round"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="100"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.Dot}"
+                                                 DashCap="Round" />
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="105"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.DashDot}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="105"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.DashDotDot}"/>
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="105"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.DashDot}"
+                                                 DashCap="Round" />
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+                <StackPanel Visibility="Visible"
+                    VerticalAlignment="Bottom"
+                    Width="100" Height="105"
+                    Margin="10">
+                    <Image>
+                        <Image.Source>
+                            <DrawingImage>
+                                <DrawingImage.Drawing>
+                                    <GeometryDrawing Brush="Orange">
+                                        <GeometryDrawing.Pen>
+                                            <Pen Brush="Black" Thickness="10"
+                                                 DashStyle="{x:Static DashStyles.DashDotDot}"
+                                                 DashCap="Triangle" />
+                                        </GeometryDrawing.Pen>
+                                        <GeometryDrawing.Geometry>
+                                            <PathGeometry>
+                                                <PathFigure IsClosed="True">
+                                                    <LineSegment Point="0,100"/>
+                                                    <LineSegment Point="100,100"/>
+                                                </PathFigure>
+                                            </PathGeometry>
+                                        </GeometryDrawing.Geometry>
+                                    </GeometryDrawing>
+                                </DrawingImage.Drawing>
+                            </DrawingImage>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
