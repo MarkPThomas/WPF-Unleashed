@@ -1,22 +1,22 @@
-﻿<Window x:Class="WPFUnleashed.MainWindow"
+﻿<Window x:Class="WPFUnleashed.GhostClippedWithOpacity"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
-        Title="DrawingBrush as the Background" Height="350" Width="525">
+        Title="GhostClippedWithOpacity" Height="300" Width="300">
     <Window.Resources>
         <ResourceDictionary>
             <DrawingGroup x:Key="ghost">
                 <!-- The Body -->
-                <GeometryDrawing Brush="Blue"
+                <GeometryDrawing Brush="#77000000"
                                  Geometry="M 240,250
                                             C 200,375 200,250 175,200
                                             C 100,400 100,250 100,200
                                             C 0,350   0,250   30,130
                                             C 75,0    100,0   150,0
-                                            C 200,0   250,0   250,150 Z" />     
+                                            C 200,0   250,0   250,150 Z" />
                 <!-- The Eyes -->
                 <GeometryDrawing Brush="Black">
                     <GeometryDrawing.Pen>
@@ -44,17 +44,19 @@
         </ResourceDictionary>
     </Window.Resources>
     <Window.Background>
-        <DrawingBrush Stretch="UniformToFill">
-            <DrawingBrush.Drawing>
-                <DrawingGroup>
-                    <DrawingGroup>
-                        <StaticResource ResourceKey="ghost" />
-                    </DrawingGroup>
-                </DrawingGroup>
-            </DrawingBrush.Drawing>
-        </DrawingBrush>
+        <LinearGradientBrush>
+            <GradientStop Offset="0" Color="Orange" />
+            <GradientStop Offset="1" Color="Brown" />
+        </LinearGradientBrush>
     </Window.Background>
-    <Grid>
-        
-    </Grid>
+    <Button Margin="40" FontSize="80">
+        OK
+        <Button.OpacityMask>
+            <DrawingBrush>
+                <DrawingBrush.Drawing>
+                    <StaticResource ResourceKey="ghost"/>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </Button.OpacityMask>
+    </Button>
 </Window>

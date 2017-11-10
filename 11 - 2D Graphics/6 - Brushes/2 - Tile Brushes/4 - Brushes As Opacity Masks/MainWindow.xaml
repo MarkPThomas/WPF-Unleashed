@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <Window.Background>
+        <LinearGradientBrush>
+            <GradientStop Offset="0" Color="Orange" />
+            <GradientStop Offset="1" Color="Brown" />
+        </LinearGradientBrush>
+    </Window.Background>
+    <Button Margin="40" FontSize="80">
+        OK
+        <Button.OpacityMask>
+            <LinearGradientBrush EndPoint="0.1,0.1" SpreadMethod="Reflect">
+                <GradientStop Offset="0" Color="Blue" />
+                <GradientStop Offset="1" Color="Transparent" />
+            </LinearGradientBrush>
+        </Button.OpacityMask>
+    </Button>
 </Window>

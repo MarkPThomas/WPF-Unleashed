@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <Window.Background>
+        <ImageBrush TileMode="FlipXY" Viewport="0,0,0.1,0.2">
+            <ImageBrush.ImageSource>
+                <BitmapImage UriSource="/Random.png" />
+            </ImageBrush.ImageSource>
+        </ImageBrush>
+    </Window.Background>
 </Window>

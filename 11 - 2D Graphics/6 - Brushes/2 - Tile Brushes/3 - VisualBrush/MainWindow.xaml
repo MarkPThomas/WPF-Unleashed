@@ -6,7 +6,17 @@
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
+    <Window.Background>
+        <VisualBrush TileMode="FlipXY" Viewport="0,0,0.5,0.5">
+            <VisualBrush.Visual>
+                <Button>OK</Button>
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Window.Background>
     <Grid>
-        
+        <StackPanel Orientation="Vertical">
+            <Button Width="90" Height="25" Click="Button_Click">To Crazy Page</Button>
+            <Button Width="90" Height="25" Click="Button_Click_1">Reflection</Button>
+        </StackPanel>
     </Grid>
 </Window>

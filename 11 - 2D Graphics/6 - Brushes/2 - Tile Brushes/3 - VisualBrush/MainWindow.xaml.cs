@@ -24,5 +24,17 @@ namespace WPFUnleashed
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            InteractiveButtons nextWindow = new InteractiveButtons();
+            nextWindow.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Reflection newWindow = new Reflection();
+            newWindow.Show();
+        }
     }
 }

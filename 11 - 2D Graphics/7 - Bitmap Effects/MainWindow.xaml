@@ -6,7 +6,28 @@
         xmlns:local="clr-namespace:WPFUnleashed"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <!-- BitmapEffects have been deprecated. Equivalent code, where possible, is shown below. -->
+    <StackPanel Orientation="Vertical">
+        <Button Width="100" Height="50" Margin="20">
+            Blurry
+            <Button.Effect>
+                <BlurEffect />
+            </Button.Effect>
+        </Button>
+        <Button Width="100" Height="50" Margin="20">
+            Drop Shadow
+            <Button.Effect>
+                <DropShadowEffect />
+            </Button.Effect>
+        </Button>
+        <Button Width="100" Height="50"  Margin="20">
+            Glow
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="0"
+                          Color="Yellow"
+                          Opacity="1"
+                          BlurRadius="15"/>
+            </Button.Effect>
+        </Button>
+    </StackPanel>
 </Window>
